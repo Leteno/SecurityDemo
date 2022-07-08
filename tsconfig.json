@@ -1,0 +1,29 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "outDir": "js",
+    "checkJs": true,
+    "allowJs": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ],
+    "plugins": [
+      {
+        "name": "tsec"
+      }
+    ]
+  },
+  "include": [
+    "app/**/*"
+  ],
+  "exclude": [
+    "js",
+    "node_modules/**",
+    "app/**/__test__",
+  ]
+}
