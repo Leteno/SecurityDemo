@@ -1,18 +1,5 @@
-import {trustedTypes} from 'trusted-types'
+import {trustedResourceUrl, unwrapResourceUrl} from 'safevalues'
 
-console.log("hello world");
+let workerSrc = trustedResourceUrl`https://www.baidu.com`;
+new Worker(unwrapResourceUrl(workerSrc) as string);
 
-const workerPolicy = trustedTypes.createPolicy('my-worker-policy', {
-  createScriptURL: url => {
-    if (url.startsWith(globalThis.origin + '/')) {
-      return url;
-    }
-    if (url == "https://www.baidu.com") {
-      return url;
-    }
-
-    throw Error(`[my-worker-policy][createScriptURL] URL is not trusted, it is: ${url}`)
-  }
-});
-let workerSrc = workerPolicy.createScriptURL("https://www.baidu.com");
-new Worker(workerSrc);
