@@ -1,5 +1,6 @@
 import {trustedResourceUrl, unwrapResourceUrl} from 'safevalues'
+import {create} from 'safevalues/dom/globals/worker';
 
 let workerSrc = trustedResourceUrl`https://www.baidu.com`;
-new Worker(unwrapResourceUrl(workerSrc) as string);
+let worker: Worker = create(workerSrc);
 
