@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.juzhen.securitydemo">
 
+    <permission android:name="security" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,7 +26,8 @@
             </intent-filter>
         </activity>
         <receiver android:name=".receiver.UnsafeReceiver01"
-            android:exported="true">
+            android:exported="true"
+            android:permission="security">
             <intent-filter>
                 <action android:name="securitydemo.unsafereceiver01"/>
             </intent-filter>
