@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".receiver.UnsafeReceiver01"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="securitydemo.unsafereceiver01"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
