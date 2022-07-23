@@ -4,6 +4,7 @@
     package="com.juzhen.secuirtydemo2">
 
     <uses-permission android:name="com.juzhen.securitydemo.security" />
+    <uses-permission android:name="com.juzhen.securitydemo.security02" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
