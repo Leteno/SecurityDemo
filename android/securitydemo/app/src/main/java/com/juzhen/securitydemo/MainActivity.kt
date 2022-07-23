@@ -1,6 +1,8 @@
 package com.juzhen.securitydemo
 
+import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.juzhen.securitydemo.databinding.ActivityMainBinding
+import com.juzhen.securitydemo.receiver.UnsafeReceiver02
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +35,14 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        startListeningReceiver02()
+    }
+    fun startListeningReceiver02() {
+        val receiver02 = UnsafeReceiver02()
+        var filter = IntentFilter()
+        filter.addAction("securitydemo.UnsafeReceiver02")
+        registerReceiver(receiver02, filter)
+        Log.d("juzhen", "startListeningReceiver02")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

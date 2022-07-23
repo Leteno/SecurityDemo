@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.juzhen.secuirtydemo2.databinding.FragmentFirstBinding
 import com.juzhen.secuirtydemo2.sender.CallUnsafeReceiver01
+import com.juzhen.secuirtydemo2.sender.CallUnsafeReceiver02
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -40,7 +41,7 @@ class FirstFragment : Fragment() {
         var handler = Handler()
         var callInBg: Runnable = object: Runnable {
             override fun run() {
-                CallUnsafeReceiver01.call(context)
+                CallUnsafeReceiver02.call(context)
                 handler.postDelayed(this, 10 * 1000);
             }
         }
