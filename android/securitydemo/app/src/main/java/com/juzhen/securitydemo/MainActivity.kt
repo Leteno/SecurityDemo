@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
         val receiver02 = UnsafeReceiver02()
         var filter = IntentFilter()
         filter.addAction("securitydemo.UnsafeReceiver02")
-        registerReceiver(receiver02, filter)
+        val permission = "com.juzhen.securitydemo.security02";
+        registerReceiver(receiver02, filter, permission, null)
         Log.d("juzhen", "startListeningReceiver02")
     }
 
