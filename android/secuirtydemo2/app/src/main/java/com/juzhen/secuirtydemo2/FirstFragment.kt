@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.juzhen.secuirtydemo2.databinding.FragmentFirstBinding
 import com.juzhen.secuirtydemo2.sender.CallUnsafeReceiver01
@@ -35,7 +36,6 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         var handler = Handler()
         var callInBg: Runnable = object: Runnable {
