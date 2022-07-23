@@ -10,6 +10,6 @@ public class CallUnsafeReceiver01 {
         Intent intent = new Intent();
         intent.setPackage("com.juzhen.securitydemo");
         intent.setAction("securitydemo.unsafereceiver01");
-        context.sendBroadcast(intent);
+        context.sendBroadcast(intent, "com.juzhen.securitydemo.security");
     }
 }
